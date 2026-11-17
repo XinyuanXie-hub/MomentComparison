@@ -1,9 +1,11 @@
-Set up the environment as in this GitHub repository, except for the README file. Write the README file and follow its instructions as below:
+# Lean verification template
 
-1. Write the theorem statement(s) requested by the user in Challenge.lean, with the precise definitions used in the corresponding paper. Keep both Challenge.lean and comparator.json unchanged during the whole task.
+A template for formalizing theorems from a paper in Lean.
 
-2. Then please keep working until you find a Solution.lean that passes the comparator check. You can generate many subagents and use a divide-and-conquer strategy: divide the problem into small pieces, let subagents work on them in parallel, and then combine them. Use normal Lean compilation during development and run the comparator only when the solution is complete.
+Follow [AGENTS.md](AGENTS.md) for setup, challenge approval, proof development, verification, and preparation of the finished repository.
 
-3. Ask the user to check Challenge.lean once the solution passes the comparator, and ask for a name for the repository.
+`Challenge.lean` contains the statements to review. `Solution.lean` proves those statements independently, with supporting proof modules in `LeanVerificationTemplate/`. External dependencies are declared in `lakefile.toml` and pinned in `lake-manifest.json`.
 
-4. After the user approves Challenge.lean, prepare a publishable GitHub repository by providing the complete Solution.lean and its supporting files. Replace the template repository name with the name provided by the user wherever needed, and generate a README following the same structure as the README in [this](https://github.com/XinyuanXie-hub/Konig-constant) repository, numbering the verified statements 1, 2, and so on.
+The final check uses `bash scripts/verify-comparator.sh` to run Comparator with Lean, NanoDa, and con-ron. The empty template has no theorem targets and is not a verified formalization.
+
+Use [README.template.md](README.template.md) to write the finished project's README, then remove that template file from the output.
