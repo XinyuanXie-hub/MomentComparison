@@ -1,6 +1,6 @@
 name = "lean_verification_template"
 version = "0.1.0"
-defaultTargets = ["Template", "Challenge", "Solution"]
+defaultTargets = ["Challenge", "Solution"]
 
 [[require]]
 name = "mathlib"
