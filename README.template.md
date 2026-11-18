@@ -1,22 +1,24 @@
 # {{PROJECT_TITLE}}
 
-This project uses Lean to verify {{RESULT_DESCRIPTION}}, from the paper cited below.
+This project uses Lean to verify {{RESULT_DESCRIPTION}}.
 
 > {{AUTHORS}}, *{{PAPER_TITLE}}*, [{{REFERENCE}}]({{PAPER_URL}}).
+
+{{ADDITIONAL_PAPER_CITATIONS_IF_NEEDED}}
 
 ## Mathematical statements
 
 {{ONLY_THE_DEFINITIONS_NEEDED_FOR_THE_STATEMENTS}}
 
-<a name="theorem-1"></a>
+<a name="{{THEOREM_ANCHOR}}"></a>
 
-**Theorem 1.** {{PRECISE_STATEMENT}}
+**{{ORIGINAL_THEOREM_LABEL}}.** {{PRECISE_STATEMENT}}
 
-{{ADD_FURTHER_STATEMENTS_NUMBERED_2_3_AND_SO_ON}}
+{{ADD_FURTHER_STATEMENTS_WITH_THEIR_ORIGINAL_PAPER_NUMBERS}}
 
 ## Verification
 
-Check that the statements and definitions in [Challenge.lean](Challenge.lean) match the mathematical statements above and the cited paper. Then run:
+Check that the statements and definitions in [Challenge.lean](Challenge.lean) match the mathematical statements above and the cited sources. Then run:
 
 ```sh
 bash scripts/verify-comparator.sh

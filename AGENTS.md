@@ -1,11 +1,38 @@
 # Formalization instructions
 
-1. Set up the environment as in this GitHub repository, except for the README file. Ask for the repository name at setup. Adapt the root package name in lakefile.toml and lake-manifest.json, the Template folder and its references to that name, using valid Lean identifiers. Update repository links wherever needed. Declare and pin any external dependencies before approval; project-local proof helpers belong in the supporting folder, not among external Lake packages. Every Lean source file must use Lean's module system, beginning with `module`; make declarations and imports public where needed.
+Please formalize the theorems requested by the user from the corresponding papers. Please keep working until you return a ready-to-publish GitHub repository according to the procedure below.
 
-2. Write the theorem statement(s) requested by the user in Challenge.lean, with the precise definitions used in the corresponding paper. Keep it clean and concise, using only necessary definitions and minimal imports from Lean core and Mathlib; do not import project-local helpers. Populate the fully qualified theorem targets in comparator.json and preserve its permitted-axiom policy. Compile the challenge, then ask the user to review and approve the challenge and configuration before proof development.
+1. **Initialization.** Set up a formalization project using the same files and directory structure as this GitHub repository. Use Lean’s module system in every Lean source file.
 
-3. Once approved, keep Challenge.lean, comparator.json, lean-toolchain, lake-manifest.json, lakefile.toml, and all other fixed project files unchanged. During proof development, change only Solution.lean and supporting proof files. Temporary notes are allowed outside the final output. If a fixed file needs correction, ask for approval before changing it, then repeat the affected checks.
+   In `Challenge.lean`, import only Mathlib or its submodules. First write the precise definitions the requested theorems depend on, then state the theorems. Use the same theorem numbers as in the papers and give each theorem a `by sorry` proof. Fill in `theorem_names` in `comparator.json`, keeping the other fields fixed, and compile `Challenge.lean`.
 
-4. Then please keep working until you find a Solution.lean that passes the comparator check. You can generate many subagents and use a divide-and-conquer strategy: divide the problem into small pieces, let subagents work on them in parallel, and then combine them. Use normal Lean compilation during development and run the comparator only when the solution is complete. Prove the same statements independently without importing Challenge.lean or leaving sorry in the completed solution. Run the full, unchanged scripts/verify-comparator.sh with Lean, NanoDa, and con-ron.
+   Ask the user to review and approve `Challenge.lean` and a suggested repository name.
 
-5. Present the completed result. Prepare a publishable GitHub repository by providing the complete Solution.lean and its necessary supporting files. Generate README.md from README.template.md, following the same structure as the README in [this](https://github.com/XinyuanXie-hub/Konig-constant) repository, numbering the verified statements 1, 2, and so on. Remove README.template.md and temporary notes, logs, caches, and intermediate artifacts from the final output. Preserve the verified source and configuration. Do not publish without authorization.
+2. **Formalization.** Once approved, find a `Solution.lean` that passes the comparator check against `Challenge.lean`, with any supporting Lean files in `Template/`.
+
+   Use the divide-and-conquer strategy for large proofs: split the proof into small pieces so that you can generate many sub-agents working in parallel. Expand proofs that are too compressed to translate into Lean. Retrieve other papers as needed and formalize the supporting theorems the proof relies on. You may use temporary Markdown notes to share expanded proofs with other agents.
+
+   Keep `Challenge.lean`, `comparator.json`, the repository name, and the files listed under **Constants** unchanged. Change only `Solution.lean` and the Lean files in `Template/`.
+
+   Use normal Lean compilation during development. Run `bash scripts/verify-comparator.sh` only when the proofs are complete, and keep working until Lean, NanoDa, and con-ron accept the solution.
+
+After formalization, ask the user for the names of the formalization authors. In `formalization.yaml`, enter the approved repository name as `project.name` and put the author names in both `project.authors` and `project.responsible_maintainers`. Complete the description with what the theorems establish, using “Verification that …, as shown in the source.” Use the papers provided by the user for `sources`, and choose the arXiv subject codes for the mathematics.
+
+Generate `README.md` from `README.template.md`, keeping the original theorem numbering from the papers. Return the verified repository without `README.template.md`, `AGENTS.md`, temporary notes, logs, caches, or intermediate files.
+
+## System specification
+
+This section is for humans to check what goes into this agentic workflow, what output to expect, and what constraints apply.
+
+**Input:** The user will provide the theorem(s) to formalize from given paper(s).
+
+**Interactions:** The agent will ask the user to accept a suggested repository name and review `Challenge.lean`, if approved, the agent will keep working until `Solution.lean` passes the comparator check. After formalization, the agent will ask for the names of the formalization authors.
+
+**Output:** A ready-to-publish GitHub repository for submission to Palomar, containing `Challenge.lean`, `Solution.lean`, supporting files, `comparator.json`, `README.md`, and `formalization.yaml`.
+
+**Constraints:**
+
+- **Constants:** `lakefile.toml`, `lake-manifest.json`, `lean-toolchain`, `scripts/`, `.github/`, `.gitignore`, and `LICENSE`.
+- **Setup:** Repository name, `Challenge.lean`, and theorem names in `comparator.json`. Every import in `Challenge.lean` must be from Mathlib or its submodules.
+- **Formalization:** `Solution.lean` and supporting Lean files in `Template/`. Temporary Markdown notes are allowed during development.
+- **Finally:** Fill in `formalization.yaml`. Update `README.md` as in `README.template.md`, then remove `README.template.md`, `AGENTS.md`, and temporary notes from the output.
