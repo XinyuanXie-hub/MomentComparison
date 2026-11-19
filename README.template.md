@@ -20,7 +20,7 @@ This project uses Lean to verify {{THEOREM_LABELS_AND_NUMBERS_FROM_THE_PAPERS}}.
 
 ## Verification
 
-To verify the correctness of the theorem in Lean, one only needs to check that the statement and definitions in [Challenge.lean](Challenge.lean) match [Theorem 1](#theorem-1) stated above, and confirm that `lake comparator` succeeds.
+To verify the correctness of the {{THEOREM_OR_THEOREMS}} in Lean, one only needs to check that the {{STATEMENT_OR_STATEMENTS}} and definitions in [Challenge.lean](Challenge.lean) match {{VERIFIED_THEOREM_LINKS}} stated above, and confirm that `lake comparator` succeeds.
 
 The results of `lake comparator` can be checked through the GitHub workflow provided by this project as follows:
 
