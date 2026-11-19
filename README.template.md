@@ -20,20 +20,13 @@ This project uses Lean to verify {{THEOREM_LABELS_AND_NUMBERS_FROM_THE_PAPERS}}.
 
 ## Verification
 
-Check that the statements and definitions in [Challenge.lean](Challenge.lean) match the mathematical statements above and the cited sources. Then run:
+To verify the correctness of the theorem in Lean, one only needs to check that the statement and definitions in [Challenge.lean](Challenge.lean) match [Theorem 1](#theorem-1) stated above, and confirm that `lake comparator` succeeds.
 
-```sh
-bash scripts/verify-comparator.sh
-```
+The results of `lake comparator` can be checked through the GitHub workflow provided by this project as follows:
 
-This runs the full Comparator with Lean, NanoDa, and con-ron.
+1. Sign in to GitHub, open the “Actions” tab, then open the first workflow run listed there.
+2. Click “Verify the Challenge against Solution”, then expand “Run Comparator with Lean, NanoDa, and con-ron”.
+3. Check that the log (lines 198–203) reports acceptance by con-ron, NanoDa, and Lean, followed by `Your solution is okay!`.
 
-To inspect verification on GitHub:
 
-1. Open this repository’s **Actions** tab and select the run for the commit being reviewed.
-2. Open “Verify the Challenge against Solution”, then “Run Comparator with Lean, NanoDa, and con-ron”.
-3. Check that the log reports acceptance by Lean, NanoDa, and con-ron, followed by `Your solution is okay!`.
-
-Successful verification checks the recorded Lean statements and proofs; fidelity to the paper requires reviewing Challenge.lean.
-
-See Lean's documentation on [validating proofs](https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-comparator) and [Comparator](https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Lake/#lake-comparator).
+Note: Here, we use the [“gold standard”](https://lean-lang.org/doc/reference/latest/ValidatingProofs/#validating-comparator) for validating proofs in Lean, and we refer readers to [“Challenges and External Checkers”](https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Lake/#lake-comparator) for details on how it works.
