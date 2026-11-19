@@ -4,11 +4,13 @@ Please formalize the theorems requested by the user from the corresponding paper
 
 ## Initialization
 
-Set up a new project with this repository’s files and directory structure. Use Lean’s module system in every Lean source file.
+1. **Fill in `Challenge.lean`.** When the user makes the request described in `README.md`, set up a new project with this repository’s files and directory structure. Use Lean’s module system in every Lean source file.
 
-In `Challenge.lean`, import only Mathlib or its submodules. Write the precise definitions the theorems depend on, then label each theorem with its number from the paper and use `by sorry` for its proof. List the Lean theorem names, including any namespaces, in `theorem_names` in `comparator.json`, leaving the other fields unchanged.
+   In `Challenge.lean`, import only Mathlib or its submodules. Write the precise definitions the theorems depend on, then state each theorem with its number from the paper and a `by sorry` proof. In `comparator.json`, set only `theorem_names`, using the Lean theorem names including any namespaces.
 
-Run `lake build Challenge` and ask the user to confirm that `Challenge.lean` matches the requested theorems. After the user confirms `Challenge.lean`, suggest a repository name they can accept or edit. The final name must be valid on GitHub and as a Lean identifier.
+   Run `lake build Challenge`, then ask the user to review `Challenge.lean` and wait for them to confirm it matches the requested theorems.
+
+2. **Agree on the repository name.** After the user confirms `Challenge.lean`, suggest a repository name and wait for them to accept it or provide another. The final name must be valid on GitHub and as a Lean identifier.
 
 ## Formalization
 
