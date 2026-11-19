@@ -31,4 +31,17 @@ jobs:
           sudo apt-get install -y -qq bubblewrap
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
       - name: Run Comparator with Lean, NanoDa, and con-ron
-        run: bash scripts/verify-comparator.sh
+        run: |
+          log=$(mktemp)
+          if bash scripts/verify-comparator.sh >"$log" 2>&1; then
+            cat "$log"
+          else
+            status=$?
+            cat "$log"
+            if [[ "$GITHUB_REPOSITORY" == 'XinyuanXie-hub/lean-verification-template' && "$status" == 2 ]] &&
+               grep -Fxq 'error: nothing to check: the configuration names no theorems or definitions' "$log"; then
+              echo '::warning::The blank template has no Comparator targets; no proof was verified.'
+            else
+              exit "$status"
+            fi
+          fi
