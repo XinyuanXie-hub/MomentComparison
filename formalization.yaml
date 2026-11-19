@@ -1,20 +1,20 @@
 # Fill in the placeholders after Comparator passes.
 project:
-  name: "{{REPOSITORY_NAME}}"
-  description: "Verification that {{THEOREM_CLAIMS}}, as shown in the source."
+  name: "MomentComparison"
+  description: "Verification that the optimal exponential base for the L2–L1 moment comparison on the Hamming cube is at least the square root of 3 and at most the constant from Eskenazis–Ivanisvili equation (191), as shown in the source."
   authors:
-    - "{{FORMALIZATION_AUTHOR}}"
+    - "Xinyuan Xie"
   license: "Apache-2.0"
   responsible_maintainers:
-    - "{{FORMALIZATION_AUTHOR}}"
+    - "Xinyuan Xie"
 
 classification:
-  arxiv: ["{{ARXIV_CATEGORY}}"]
+  arxiv: ["math.PR", "math.FA"]
 
 sources:
-  - title: "{{PAPER_TITLE}}"
-    authors: ["{{PAPER_AUTHOR}}"]
-    id: "{{PAPER_ID}}"
+  - title: "Grokability in five inequalities"
+    authors: ["Paata Ivanisvili", "Xinyuan Xie"]
+    id: "arXiv:2605.05193v1"
     relationship: "formalizes"
 
 automation:

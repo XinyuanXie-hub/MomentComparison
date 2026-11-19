@@ -1,7 +1,7 @@
 {
   "challenge_module": "Challenge",
   "solution_module": "Solution",
-  "theorem_names": [],
+  "theorem_names": ["Grokability.theorem2"],
   "permitted_axioms": [
     "propext",
     "Quot.sound",
