@@ -2,7 +2,7 @@
 
 This is a simple reusable repository for Lean formalization. To use it, send the following to an agent:
 
-> Please formalize theorem XX in paper YY by following the instructions in [this repository](https://github.com/XinyuanXie-hub/lean-verification-template) and return the resulting repository.
+> Please formalize theorem XX in paper YY by following the instructions in https://github.com/XinyuanXie-hub/lean-verification-template and return the resulting repository.
 
 The intended output is a ready-to-publish GitHub repository to submit to [Palomar](https://palomar-registry.org/).
 
