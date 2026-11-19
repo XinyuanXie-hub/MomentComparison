@@ -21,21 +21,7 @@ C_\ast = \inf\left\{ C>0 :
 \right\}.
 ```
 
-The upper bound $2.408\ldots$ is the exact constant in equation (191) of Eskenazis and Ivanisvili. For $p>2$ put
-
-```math
-r_p = \sqrt{p-1},\qquad
-\theta_p = 2\arcsin(2r_p/p),\qquad
-\alpha_p = \frac{\pi}{2\pi-\theta_p}.
-```
-
-With $`a_p=(i r_p-1)^{\alpha_p}`$ and $`b_p=(i r_p+1)^{\alpha_p}`$ computed using the principal branch, the constant is
-
-```math
-C = \inf_{p>2}\left|\frac{a_p+b_p}{a_p-b_p}\right|^{p/(2(p-2))}.
-```
-
-[Equation (191)](https://arxiv.org/html/1902.02406#S5.E191)
+The upper bound $2.408\ldots$ denotes the exact constant defined by Eskenazis and Ivanisvili in [equation (191)](https://arxiv.org/html/1902.02406#S5.E191).
 
 <a name="theorem-2"></a>
 
