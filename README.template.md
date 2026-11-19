@@ -1,6 +1,6 @@
 # {{PROJECT_TITLE}}
 
-This project uses Lean to verify {{RESULT_DESCRIPTION}}.
+This project uses Lean to verify {{THEOREM_LABELS_AND_NUMBERS_FROM_THE_PAPERS}}.
 
 > {{AUTHORS}}, *{{PAPER_TITLE}}*, [{{REFERENCE}}]({{PAPER_URL}}).
 
@@ -8,13 +8,15 @@ This project uses Lean to verify {{RESULT_DESCRIPTION}}.
 
 ## Mathematical statements
 
-{{ONLY_THE_DEFINITIONS_NEEDED_FOR_THE_STATEMENTS}}
+<!-- Replace the placeholders with the papers’ original labels and numbers, wording, and mathematical notation. State only the definitions needed for the theorems. Use one block per theorem and identify its source when citing multiple papers. Remove this comment from the finished README. -->
+
+{{DEFINITIONS_IN_THE_PAPERS_WORDING_AND_NOTATION}}
 
 <a name="{{THEOREM_ANCHOR}}"></a>
 
-**{{ORIGINAL_THEOREM_LABEL}}.** {{PRECISE_STATEMENT}}
+**{{ORIGINAL_THEOREM_LABEL_AND_NUMBER}}.** {{ORIGINAL_THEOREM_STATEMENT}}
 
-{{ADD_FURTHER_STATEMENTS_WITH_THEIR_ORIGINAL_PAPER_NUMBERS}}
+{{ADDITIONAL_THEOREM_BLOCKS_IF_NEEDED}}
 
 ## Verification
 
@@ -28,9 +30,9 @@ This runs the full Comparator with Lean, NanoDa, and con-ron.
 
 To inspect verification on GitHub:
 
-1. Open [Actions](https://github.com/{{OWNER}}/{{REPOSITORY}}/actions) and select the run for the commit being reviewed.
+1. Open this repository’s **Actions** tab and select the run for the commit being reviewed.
 2. Open “Verify the Challenge against Solution”, then “Run Comparator with Lean, NanoDa, and con-ron”.
-3. Confirm acceptance by all three checkers and successful completion of Comparator.
+3. Check that the log reports acceptance by Lean, NanoDa, and con-ron, followed by `Your solution is okay!`.
 
 Successful verification checks the recorded Lean statements and proofs; fidelity to the paper requires reviewing Challenge.lean.
 
