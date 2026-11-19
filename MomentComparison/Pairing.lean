@@ -8,7 +8,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 /-- Hölder's inequality for the bilinear pairing under uniform cube probability. -/
 theorem norm_cubePair_le {n : ℕ} {p q : ℝ} (hpq : p.HolderConjugate q)
@@ -33,4 +33,4 @@ theorem norm_cubePair_le {n : ℕ} {p q : ℝ} (hpq : p.HolderConjugate q)
     div_mul_div_comm, ← Real.rpow_add hN, hpq.inv_add_inv_eq_one, Real.rpow_one]
   simp only [one_div]
 
-end Grokability
+end MomentComparison

@@ -11,7 +11,7 @@ import all MomentComparison.Basic
 open Filter Finset
 open scoped Topology
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The leading coefficient of a shifted binomial polynomial. -/
 private theorem tendsto_choose_normalized (a d : ℕ) :
@@ -199,4 +199,4 @@ theorem lowerBound : Real.sqrt 3 ≤ Cstar := by
 
 end
 
-end Grokability
+end MomentComparison

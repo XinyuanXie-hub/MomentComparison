@@ -10,7 +10,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The uniform probability moment norm on the cube. -/
 @[expose] noncomputable def complexMomentNorm {n : ℕ} (p : ℝ) (f : Cube n → ℂ) : ℝ :=
@@ -97,4 +97,4 @@ theorem complexMomentNorm_interpolate {n : ℕ} (f : Cube n → ℂ) {p r u : �
   convert h using 2 <;> congr 1
   field_simp
 
-end Grokability
+end MomentComparison

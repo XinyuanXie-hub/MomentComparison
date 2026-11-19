@@ -8,7 +8,7 @@ import Mathlib.Tactic.Ring
 
 public section
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The lens of complex noise parameters for conjugate exponents. -/
 @[expose] def inLens (p : ℝ) (w : ℂ) : Prop :=
@@ -130,4 +130,4 @@ theorem anisotropic_sq_le {p : ℝ} (hp : 2 < p) {w z : ℂ} (hw : inLens p w) :
   rw [← he] at hq
   exact sub_nonneg.mp hq
 
-end Grokability
+end MomentComparison

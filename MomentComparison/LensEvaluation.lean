@@ -7,7 +7,7 @@ import Mathlib.Tactic.Linarith
 
 public section
 
-namespace Grokability
+namespace MomentComparison
 
 private theorem norm_sub_one_lt_norm_add_one {q : ℂ} (hq : 0 < q.re) :
     ‖q - 1‖ < ‖q + 1‖ := by
@@ -183,4 +183,4 @@ theorem inverse_disk_at_one_of_p {p : ℝ} (hp : 2 < p) :
   rw [lensAngle_eq_four_arctan hp]
   exact inverse_disk_at_one ((Real.lt_sqrt (by norm_num)).2 (by linarith))
 
-end Grokability
+end MomentComparison

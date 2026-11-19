@@ -11,7 +11,7 @@ import all MomentComparison.Basic
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 private theorem cubeAverage_congr_le {n : ℕ} {f g : Cube n → ℝ} (h : ∀ x, f x ≤ g x) :
     cubeAverage f ≤ cubeAverage g :=
@@ -177,4 +177,4 @@ theorem complexNoise_contract {p : ℝ} (hp : 2 < p) {w : ℂ} (hw : inLens p w)
 
 end
 
-end Grokability
+end MomentComparison

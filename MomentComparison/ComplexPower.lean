@@ -4,7 +4,7 @@ public import Mathlib.Analysis.SpecialFunctions.Pow.Complex
 
 public section
 
-namespace Grokability
+namespace MomentComparison
 
 /-- Division subtracts principal arguments when the difference lies in the principal interval. -/
 theorem arg_div_of_arg_sub {x y : ℂ} (hx : x ≠ 0) (hy : y ≠ 0)
@@ -37,4 +37,4 @@ theorem arg_cpow_ofReal {z : ℂ} (hz : z ≠ 0) {b : ℝ}
   simp [Complex.mul_im, Complex.log_im, toIocMod_eq_self Real.two_pi_pos (a := -Real.pi),
     show -Real.pi + 2 * Real.pi = Real.pi by ring, hl, hu]
 
-end Grokability
+end MomentComparison

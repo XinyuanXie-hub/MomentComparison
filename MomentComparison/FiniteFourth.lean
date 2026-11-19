@@ -9,7 +9,7 @@ public section
 open scoped BigOperators
 open Finset
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The contribution of symmetric differences of size (2k) to the fourth moment. -/
 theorem finite_fourth_ge (n m k : ℕ) (hkm : k ≤ m) :
@@ -36,4 +36,4 @@ theorem finite_fourth_ge (n m k : ℕ) (hkm : k ≤ m) :
     _ ≤ ∑ T : Finset (Fin n), (walshPairCount n m T : ℝ) ^ 2 :=
       sum_le_sum_of_subset_of_nonneg (subset_univ supports) (fun _ _ _ => sq_nonneg _)
 
-end Grokability
+end MomentComparison

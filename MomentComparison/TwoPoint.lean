@@ -16,7 +16,7 @@ public section
 
 open Filter Topology Set
 
-namespace Grokability
+namespace MomentComparison
 
 private def U (y x : ℝ) : ℝ := (1 + x) ^ 2 + y
 private def V (y x : ℝ) : ℝ := (1 - x) ^ 2 + y
@@ -372,4 +372,4 @@ theorem onePointLower {p : ℝ} (hp : 1 < p) (hp' : p ≤ 2) (z : ℂ) :
   have h := (G_bounds (p / 2) z.re (sq_nonneg z.im) (by linarith)).2 (by linarith)
   linarith
 
-end Grokability
+end MomentComparison

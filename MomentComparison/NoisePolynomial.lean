@@ -9,7 +9,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 open Finset
 
@@ -187,4 +187,4 @@ theorem exists_noise_polynomial {n d : ℕ} (f : Cube n → ℝ) (hf : HasDegree
     intro x _
     ring
 
-end Grokability
+end MomentComparison

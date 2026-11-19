@@ -9,7 +9,7 @@ public section
 
 open scoped symmDiff
 
-namespace Grokability
+namespace MomentComparison
 
 /-- To form two (m)-sets with symmetric difference (U), choose which half of (U)
 lies in the first set, and independently choose a common subset of its complement. -/
@@ -69,4 +69,4 @@ theorem pair_count_ge {α : Type*} [Fintype α] [DecidableEq α]
     exact Prod.ext (hpLeft.symm.trans (firstEq ▸ hqLeft))
       (hpRight.symm.trans (firstEq ▸ hqRight))
 
-end Grokability
+end MomentComparison

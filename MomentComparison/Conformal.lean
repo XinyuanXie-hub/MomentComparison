@@ -15,7 +15,7 @@ public section
 open scoped BigOperators
 open Set Metric
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The modulus of the exterior map at 1 in equation (184) of
 Eskenazis–Ivanisvili. -/
@@ -456,4 +456,4 @@ theorem polynomialGrowth {p : ℝ} (hp : 2 < p) {P : Polynomial ℂ} {d : ℕ}
     (t := t) (mem_closedBall_zero_iff.mpr ht.le) ht0
   rwa [normalizedInverse_eq ht0, he, hnorm] at h
 
-end Grokability
+end MomentComparison

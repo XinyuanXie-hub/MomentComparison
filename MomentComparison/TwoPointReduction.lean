@@ -8,7 +8,7 @@ import Mathlib.Tactic.Ring
 
 public section
 
-namespace Grokability
+namespace MomentComparison
 
 private noncomputable def twoPointMoment (s : ℝ) (a b : ℂ) : ℝ :=
   (‖a + b‖ ^ s + ‖a - b‖ ^ s) / 2
@@ -100,4 +100,4 @@ theorem twoPoint_contract {p : ℝ} (hp : 2 < p) {w : ℂ} (hw : inLens p w) (a 
       ((‖a + b‖ ^ (p / (p - 1)) + ‖a - b‖ ^ (p / (p - 1))) / 2) ^ (p / (p - 1))⁻¹ :=
   twoPoint_contract_of_onePoint onePointUpper onePointLower hp hw a b
 
-end Grokability
+end MomentComparison

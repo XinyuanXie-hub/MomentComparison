@@ -13,7 +13,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 private theorem complexMomentNorm_real_one {n : ℕ} (f : Cube n → ℝ) :
     complexMomentNorm 1 (fun x => (f x : ℂ)) = cubeAverage (fun x => |f x|) := by
@@ -247,4 +247,4 @@ theorem cstar_le_upperBase : Cstar ≤ upperBase :=
     (fun _ hp _ f _ hw => complexNoise_contract hp hw f)
     (fun _ hp _ _ hP _ hM hbound => polynomialGrowth hp hP hM hbound)
 
-end Grokability
+end MomentComparison

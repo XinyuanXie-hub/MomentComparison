@@ -6,7 +6,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The Hamming cube, with `true` representing 1 and `false` representing −1. -/
 abbrev Cube (n : ℕ) := Fin n → Bool
@@ -42,4 +42,4 @@ noncomputable def upperBase : ℝ :=
 theorem theorem2 : Real.sqrt 3 ≤ Cstar ∧ Cstar ≤ upperBase := by
   sorry
 
-end Grokability
+end MomentComparison

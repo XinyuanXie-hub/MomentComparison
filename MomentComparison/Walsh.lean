@@ -11,7 +11,7 @@ public section
 
 open scoped BigOperators symmDiff
 
-namespace Grokability
+namespace MomentComparison
 
 open Finset
 
@@ -241,4 +241,4 @@ theorem cubeAverage_walshLayer_fourth (n m : ℕ) :
   simp_rw [havg]
   simp [a]
 
-end Grokability
+end MomentComparison

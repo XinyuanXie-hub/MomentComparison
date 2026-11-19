@@ -18,7 +18,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The Hamming cube, with `true` representing 1 and `false` representing −1. -/
 abbrev Cube (n : ℕ) := Fin n → Bool
@@ -51,4 +51,4 @@ noncomputable def upperBase : ℝ :=
     let b := (z + 1) ^ α
     ‖(a + b) / (a - b)‖ ^ (p / (2 * (p - 2)))) '' Set.Ioi 2)
 
-end Grokability
+end MomentComparison

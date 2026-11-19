@@ -6,7 +6,7 @@ import Mathlib.Tactic.Linarith
 
 public section
 
-namespace Grokability
+namespace MomentComparison
 
 /-- The angle in equation (191) in terms of the slope of the lens at its vertex. -/
 theorem lensAngle_eq_four_arctan {p : ℝ} (hp : 2 < p) :
@@ -77,4 +77,4 @@ theorem lensParameters {p : ℝ} (hp : 2 < p) :
   field_simp [hp0.ne', hr.ne']
   ring
 
-end Grokability
+end MomentComparison

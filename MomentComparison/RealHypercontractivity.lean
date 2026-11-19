@@ -11,7 +11,7 @@ public section
 
 open scoped BigOperators
 
-namespace Grokability
+namespace MomentComparison
 
 private theorem average_nonneg {n : ℕ} {f : Cube n → ℝ} (hf : ∀ x, 0 ≤ f x) :
     0 ≤ cubeAverage f :=
@@ -198,4 +198,4 @@ theorem admissible_nonempty :
         Real.sqrt (cubeAverage fun x => f x ^ 2) ≤ C ^ d * cubeAverage (fun x => |f x|)}.Nonempty :=
   ⟨3, by norm_num, fun _ _ _ _ _ hf => baseThree hf⟩
 
-end Grokability
+end MomentComparison
