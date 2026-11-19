@@ -14,7 +14,7 @@ Once the user chooses a repository name, rename `Template/` to that name. In `la
 
 ### Strategy
 
-Use the divide-and-conquer strategy for large proofs, giving sub-agents small pieces to work on in parallel. Expand mathematical proofs that are too compressed to translate into Lean, and download other papers as needed to formalize the results those proofs rely on. When a proof depends on a result not already available in the pinned libraries, formalize that result and its prerequisites, and keep working until `lake build Solution` succeeds and `bash scripts/verify-comparator.sh` passes against the unchanged, user-approved `Challenge.lean` and `comparator.json`, without adding axioms or leaving proof gaps.
+Use the divide-and-conquer strategy for large proofs, spawning many sub-agents and giving them small pieces to work on in parallel. Expand mathematical proofs that are too compressed to translate into Lean, and download other papers as needed to formalize the results those proofs rely on. When a proof depends on a result not already available in the pinned libraries, formalize that result and its prerequisites, and keep working until `lake build Solution` succeeds and `bash scripts/verify-comparator.sh` passes against the unchanged, user-approved `Challenge.lean` and `comparator.json`, without adding axioms or leaving proof gaps.
 
 Use normal Lean compilation during development (`lake build Solution`). Run `bash scripts/verify-comparator.sh` only when the proofs are complete, and keep working until Lean, NanoDa, and con-ron accept the solution.
 
