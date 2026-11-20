@@ -1,6 +1,6 @@
 # Fill in the placeholders after Comparator passes.
 project:
-  name: "MomentComparison"
+  name: "Improved bounds for the L²–L¹ moment comparison constant on the Hamming cube"
   description: "Verification that the optimal exponential base for the L2–L1 moment comparison on the Hamming cube is at least the square root of 3 and at most the constant from Eskenazis–Ivanisvili equation (191), as shown in the source."
   authors:
     - "Xinyuan Xie"
